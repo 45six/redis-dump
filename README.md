@@ -3,7 +3,7 @@
 General redis-dump options:<br>
   &emsp;&emsp;-auth string<br>
         &emsp;&emsp;&emsp;&emsp;redis auth<br>
-        &emsp;&emsp;&emsp;&emsp;redis 密码<br>
+        &emsp;&emsp;&emsp;&emsp;redis 密码 (default "")<br>
   &emsp;&emsp;-debug<br>
         &emsp;&emsp;&emsp;&emsp;is debug<br>
         &emsp;&emsp;&emsp;&emsp;debug开关<br>
