@@ -1,29 +1,29 @@
-# redis-dump
+# redis-dump ——redis 备份、更新工具
 
 General redis-dump options:<br>
-  $\qquad$-auth string<br>
-        $\qquad$$\qquad$redis auth<br>
-        $\qquad$$\qquad$redis 密码<br>
-  $\qquad$-debug<br>
-        $\qquad$$\qquad$is debug<br>
-        $\qquad$$\qquad$debug开关<br>
-  $\qquad$-file string<br>
-        $\qquad$$\qquad$file path<br>
-        $\qquad$$\qquad$文件路径 (default "redis_data.json")<br>
-  $\qquad$-gcount int<br>
-        $\qquad$$\qquad$goroutine count by redis key<br>
-        $\qquad$$\qquad$并发执行key操作的最大协程数量 (default 100)<br>
-  $\qquad$-help<br>
-        $\qquad$$\qquad$Show help<br>
-        $\qquad$$\qquad$显示帮助文档<br>
-  $\qquad$-ip string<br>
-        $\qquad$$\qquad$redis ip<br>
-        $\qquad$$\qquad$redis ip地址 (default "127.0.0.1")<br>
-  $\qquad$-op string<br>
-        $\qquad$$\qquad$operation(dump or update)<br>
-        $\qquad$$\qquad$操作类型(dump备份)(update更新)<br>
-  $\qquad$-port int<br>
-        $\qquad$$\qquad$redis port<br>
-        $\qquad$$\qquad$redis 端口 (default 6379)<br>
+  &emsp;&emsp;-auth string<br>
+        &emsp;&emsp;&emsp;&emsp;redis auth<br>
+        &emsp;&emsp;&emsp;&emsp;redis 密码<br>
+  &emsp;&emsp;-debug<br>
+        &emsp;&emsp;&emsp;&emsp;is debug<br>
+        &emsp;&emsp;&emsp;&emsp;debug开关<br>
+  &emsp;&emsp;-file string<br>
+        &emsp;&emsp;&emsp;&emsp;file path<br>
+        &emsp;&emsp;&emsp;&emsp;文件路径 (default "redis_data.json")<br>
+  &emsp;&emsp;-gcount int<br>
+        &emsp;&emsp;&emsp;&emsp;goroutine count by redis key<br>
+        &emsp;&emsp;&emsp;&emsp;并发执行key操作的最大协程数量 (default 100)<br>
+  &emsp;&emsp;-help<br>
+        &emsp;&emsp;&emsp;&emsp;Show help<br>
+        &emsp;&emsp;&emsp;&emsp;显示帮助文档<br>
+  &emsp;&emsp;-ip string<br>
+        &emsp;&emsp;&emsp;&emsp;redis ip<br>
+        &emsp;&emsp;&emsp;&emsp;redis ip地址 (default "127.0.0.1")<br>
+  &emsp;&emsp;-op string<br>
+        &emsp;&emsp;&emsp;&emsp;operation(dump or update)<br>
+        &emsp;&emsp;&emsp;&emsp;操作类型(dump备份)(update更新)<br>
+  &emsp;&emsp;-port int<br>
+        &emsp;&emsp;&emsp;&emsp;redis port<br>
+        &emsp;&emsp;&emsp;&emsp;redis 端口 (default 6379)<br>
 
 
