@@ -130,16 +130,33 @@ func dump() {
 		mutex.Unlock()
 
 		conn.Do("SELECT", dbNum)
-		keys, err := redis.Strings(conn.Do("KEYS", "*"))
-		if err != nil {
-			utils.WriteLog("", err.Error())
-			return
-		}
 
-		for _, redisKey := range keys {
-			wg.Add(1)
-			goroutineChan <- struct{}{}
-			go dumpRedis(dbNum, redisKey)
+		var keys []string
+		var cursor int64 = 0
+		for {
+			values, err := redis.Values(conn.Do("SCAN", cursor))
+			if err != nil {
+				utils.WriteLog("", err.Error())
+				return
+			}
+			// 解析 SCAN 命令的返回值
+			_, err = redis.Scan(values, &cursor, &keys)
+			if err != nil {
+				utils.WriteLog("", err.Error())
+				return
+			}
+			//fmt.Println(cursor, dbNum, keys)
+
+			for _, redisKey := range keys {
+				wg.Add(1)
+				goroutineChan <- struct{}{}
+				go dumpRedis(dbNum, redisKey)
+			}
+
+			// 当 cursor 为 0 时，表示迭代结束
+			if cursor == 0 {
+				break
+			}
 		}
 	}
 	//fmt.Println(redisJson)
